@@ -1,0 +1,30 @@
+.element {
+    background-color: #fff;
+    width: 282px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: #000;
+    padding-bottom: 31px;
+    margin-bottom: 20px;
+    margin-right: 17px;
+    position: relative;
+}
+
+.element:nth-child(3n) {
+    margin-right: 0;
+}
+
+@media screen and (max-width: 880px) {
+    .element:nth-child(odd) {
+        margin-right: 17px;
+    }
+}
+
+@media screen and (max-width: 595px) {
+    .element:nth-child(odd) {
+        margin-right: 0px;
+    }
+}
