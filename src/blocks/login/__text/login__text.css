@@ -1,0 +1,17 @@
+.login__text {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(204, 204, 204, 1);
+    padding-bottom: 13px;
+    margin-bottom: 30px;
+    width: 100%;
+    color: white;
+    font-weight: 500;
+}
+
+.login__text::placeholder {
+    color: rgba(204, 204, 204, 1);
+    font-size: 14px;
+    line-height: 1.21;
+    font-weight: 400;
+}

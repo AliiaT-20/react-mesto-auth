@@ -1,12 +1,16 @@
 import React from 'react';
 import Card from './Card';
+import Header from './Header';
 import editIcon from '../images/edit-icon.svg'
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function Main(props) {
     const currentUser = React.useContext(CurrentUserContext)
+    
     return (
-        <main className="content">
+        <>
+            <Header path="" text='Выйти' em={props.path} userEmail = {props.email} />
+            <main className="content">
                 <section className="profile">
                     <div className="profile__info">
                         <div className="profile__avatar-block">
@@ -26,13 +30,14 @@ function Main(props) {
                     <button className="profile__add-button" type="button" onClick = {props.onAddPlace}></button>
                 </section>
                 <section className="elements">
-                {props.cards.map((card) => {
+                    {props.cards.map((card) => {
                         return (
                             <Card card = {card} onCardClick = {props.onCardClick} key={card._id} onCardLike = {props.onCardLike} onCardDelete = {props.onCardDelete} />
                         )
                     })}
                 </section>
             </main>
+        </>
     );
   }
   

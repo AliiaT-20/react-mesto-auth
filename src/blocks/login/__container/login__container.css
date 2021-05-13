@@ -1,0 +1,7 @@
+.login__container {
+    display: flex;
+    flex-direction: column;
+    width: 358px;
+    justify-content: stretch;
+    margin-top: 24px;
+}
