@@ -1,5 +1,5 @@
 Проект 4: Mesto
-Ссылка на проект: https://aliiat-20.github.io/mesto-react/
+Ссылка на проект: https://aliiat-20.github.io/react-mesto-auth/
 
 Проект о фотографиях красивых мест в России. Проект реализован по методологии БЭМ с учётом правил Nested.
 
