@@ -94,19 +94,19 @@ function App() {
     
     function handleInfoTooltipClose() {
         const check = imageInfoTooltip;
-        setIsInfoTooltip(false)
+        setIsInfoTooltip(false);
         setTextInfoTooltip('');
         setImageInfoTooltip('');
         if (check === success) {
             history.push('/sign-in')
-        }
+        };
     }
 
     function closeAllPopups () {
-        setIsEditProfilePopupOpen(false)
-        setIsAddPlacePopupOpen(false)
-        setIsEditAvatarPopupOpen(false)
-        setSelectedCard({})
+        setIsEditProfilePopupOpen(false);
+        setIsAddPlacePopupOpen(false);
+        setIsEditAvatarPopupOpen(false);
+        setSelectedCard({});
     } 
     function handleUpdateUser(userInfo) {
         api.editProfileInfo(userInfo)
@@ -138,8 +138,6 @@ function App() {
             if (data.token){
             const mail = email;
             setUserEmail(mail);
-            email= '';
-            password = '';
             handleLogin(e);
             history.push('/');
             }
@@ -147,7 +145,9 @@ function App() {
         .catch(err => console.log(err));
     }
     function handleOnRegister(password, email) {
-        auth.register(password, email).then((res) => {
+        console.log(password, email)
+        auth.register(password, email)
+        .then((res) => {
             if(!res.error && !res.message){
                 handleInfoToolTipOpen("Вы успешно зарегистрировались!", success)
             } else {
