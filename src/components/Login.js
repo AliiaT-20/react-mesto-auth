@@ -1,10 +1,6 @@
 import '../index.css';
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
 import Header from './Header';
-import InfoTooltip from './InfoTooltip';
-import successImage from '../images/success.svg';
-import * as auth from '../auth.js';
 
 class Login extends React.Component {
     constructor(props){
@@ -29,24 +25,12 @@ class Login extends React.Component {
         if (!this.state.email || !this.state.password){
             return;
         }
-        auth.authorize(this.state.password, this.state.email)
-        .then((data) => {
-            if (data.token){
-            const mail = this.state.email
-            this.props.apiMail(mail)
-                this.setState({email: '', password: ''},
-                () => {
-                    this.props.handleLogin(e);
-                    this.props.history.push('/');
-                })
-            }  
-        })
-        .catch(err => console.log(err)); // запускается, если пользователь не найден
+        this.props.onLogin(e, this.state.password, this.state.email)
     }
     render() {
         return (
             <section className="login">
-                <Header to='/sign-up' text="Регистрация" />
+                <Header link='/sign-up' text="Регистрация" />
                 <div className="login__container">
                     <h3 className="login__title">Вход</h3>
                     <form className="login__form" name = "login" onSubmit={this.handleSubmit}>
@@ -66,5 +50,5 @@ class Login extends React.Component {
     }
 }
   
-  export default withRouter(Login);
+  export default Login;
   
